@@ -8,7 +8,7 @@ export function NavBar() {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Container class="d-flex justify-content-around">
+        <Container className="d-flex justify-content-around">
           <Navbar.Brand href="#home">
             <img
               src={brand}

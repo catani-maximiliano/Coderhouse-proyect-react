@@ -1,7 +1,13 @@
-import {saludo} from '../App'
 
-export function ItemListContainer(){
 
+export function ItemListContainer({saludos}){
+    return(
+        <div>
+            <p>
+                {saludos}
+            </p>
+        </div>
+    )
 }
 
-export default ItemListContainer
+export default ItemListContainer;
