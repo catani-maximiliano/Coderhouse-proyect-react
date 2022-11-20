@@ -1,10 +1,10 @@
 
 
-export function ItemListContainer({saludos}){
+export function ItemListContainer({greeting}){
     return(
         <div>
             <p>
-                {saludos}
+                {greeting}
             </p>
         </div>
     )
