@@ -1,33 +1,46 @@
-  
+
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import Navbar from "./components/navBar/NavBar"
+
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Cart from "./components/cart/Cart";
+
+import CartContextProvider from "./context/CartContext";
+import Form from "./components/form/Form";
+import FormikFormulario from "./components/formik/FormikFormulario";
 
 
 function App() {
+
+  // CREAR EL ENRUTADO
+
   return (
    
     <BrowserRouter>
-    
-      <Navbar />
+      <CartContextProvider>
 
-      <Routes>
+        <Navbar />
 
-        <Route path="/" element={<ItemListContainer />} />
-        
-        <Route path="/category/:categoryName" element={<ItemListContainer />} />
+        <Routes>
 
+          <Route path="/" element={<ItemListContainer />} />
+          
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
 
-        <Route path="/itemDetail/:id" element={ <ItemDetailContainer /> } />
+          <Route path="/itemDetail/:id" element={ <ItemDetailContainer /> } />
 
-        <Route path="/cart" element={ <h3>Aca se muestra el carrito</h3> } />
+          <Route path="/checkout" element={ <Form /> } />
 
-        <Route path="*" element={ <h2>Lo siento esta url no existe</h2> } />
+          <Route path="/cart" element={ <Cart /> } />
 
-      </Routes>
+          <Route path="/formik" element={ <FormikFormulario /> } />
 
-    
+          <Route path="*" element={ <h2>Lo siento esta url no existe</h2> } />
+
+        </Routes>
+
+      </CartContextProvider>
     </BrowserRouter>
 
   );
